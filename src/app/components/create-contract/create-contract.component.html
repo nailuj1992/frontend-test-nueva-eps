@@ -1,0 +1,52 @@
+<div id="create-contract" class="container">
+    <form id="submitForm" [formGroup]="submitForm" (ngSubmit)="onSubmit()" autocomplete="off" class="form-group">
+        <div class="form-group mb-3">
+            <label for="modality" class="form-label">Modalidad de contrato:</label>
+            <select name="modality" id="modality" formControlName="modality" required class="form-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="Evento">Evento</option>
+                <option value="Cápita">Cápita</option>
+            </select>
+            <div
+                *ngIf="submitForm.get('modality')?.invalid && (submitForm.get('modality')?.touched || submitForm.get('modality')?.dirty)">
+                <small class="text-danger">Modalidad es requerida.</small>
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="consecutiveNumber" class="form-label">Número de contrato:</label>
+            <input id="consecutiveNumber" type="number" formControlName="consecutiveNumber" required
+                class="form-control">
+            <div
+                *ngIf="submitForm.get('consecutiveNumber')?.errors?.['required'] && (submitForm.get('consecutiveNumber')?.touched || submitForm.get('consecutiveNumber')?.dirty)">
+                <small class="text-danger">Número de contrato es requerido.</small>
+            </div>
+            <div
+                *ngIf="submitForm.get('consecutiveNumber')?.errors?.['pattern'] && (submitForm.get('consecutiveNumber')?.touched || submitForm.get('consecutiveNumber')?.dirty)">
+                <small class="text-danger">Número de contrato debe ser un número válido.</small>
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="regimen" class="form-label">Régimen:</label>
+            <select name="regimen" id="regimen" formControlName="regimen" required class="form-select">
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="Contributivo">Contributivo</option>
+                <option value="Subsidiado">Subsidiado</option>
+            </select>
+            <div
+                *ngIf="submitForm.get('regimen')?.invalid && (submitForm.get('regimen')?.touched || submitForm.get('regimen')?.dirty)">
+                <small class="text-danger">Régimen es requerido.</small>
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="file" class="form-label">Archivo:</label>
+            <input id="file" type="file" formControlName="file" required class="form-control"
+                (change)="onFileSelected($event)">
+            <div
+                *ngIf="submitForm.get('file')?.invalid && (submitForm.get('file')?.touched || submitForm.get('file')?.dirty)">
+                <small class="text-danger">Archivo es requerido.</small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="submitForm.invalid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+/* General Menu Styling */
+.menu {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container to align items */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Menu Items Styling */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual Menu Item Styling */
+.menu-item {
+    margin: 0 10px;
+}
+
+/* Button Styling */
+.btn-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        margin: 5px 0;
+    }
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 769px) {
+    .menu-item {
+        margin: 0 15px;
+    }
+}

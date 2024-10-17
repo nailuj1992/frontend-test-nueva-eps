@@ -1,0 +1,55 @@
+/* General Styling */
+#create-contract {
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-select,
+.form-control {
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #create-contract {
+        margin: 1rem;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 992px) {
+    #create-contract {
+        margin: 2rem;
+    }
+
+    .btn-primary {
+        padding: 0.6rem;
+    }
+}
+
+/* Desktop Styling */
+@media (min-width: 993px) {
+    #create-contract {
+        margin: 2rem auto;
+    }
+
+    .btn-primary {
+        padding: 0.75rem;
+    }
+}
